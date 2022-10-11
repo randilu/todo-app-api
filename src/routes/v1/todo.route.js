@@ -5,6 +5,7 @@ const router = express.Router();
 
 router
   .route('/')
+  .post(todoController.createTodo)
   .get(todoController.getTodos);
 
 module.exports = router;
