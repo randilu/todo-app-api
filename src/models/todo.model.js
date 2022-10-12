@@ -18,6 +18,6 @@ todoSchema.set('toJSON', {
   },
 });
 
-const ToDo = mongoose.model('ToDo', todoSchema);
+const Todo = mongoose.model('Todo', todoSchema);
 
-module.exports = ToDo;
+module.exports = Todo;

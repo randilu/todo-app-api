@@ -1,5 +1,6 @@
 const httpStatus = require('http-status');
 const { todoService } = require('../services');
+const ApiError = require('../utils/ApiError');
 
 const createTodo = async (req, res) => {
   try {
@@ -22,11 +23,12 @@ const getTodos = async (req, res) => {
 const getTodo = async (req, res) => {
   try {
     const todo = await todoService.getTodoById(req.params.todoId);
-    if (!todo) {
-      res.status(httpStatus.NOT_FOUND).send({ message: 'Todo not found' });
-    }
     res.send(todo);
   } catch (error) {
+    if (error instanceof ApiError) {
+      const { statusCode, message } = error;
+      res.status(statusCode).send({ code: statusCode, message });
+    }
     res.status(httpStatus.INTERNAL_SERVER_ERROR).send({ message: error.message });
   }
 };
@@ -36,6 +38,10 @@ const updateTodo = async (req, res) => {
     const todo = await todoService.updateTodoById(req.params.todoId, req.body);
     res.send(todo);
   } catch (error) {
+    if (error instanceof ApiError) {
+      const { statusCode, message } = error;
+      res.status(statusCode).send({ code: statusCode, message });
+    }
     res.status(httpStatus.INTERNAL_SERVER_ERROR).send({ message: error.message });
   }
 };
@@ -45,6 +51,10 @@ const deleteTodo = async (req, res) => {
     await todoService.deleteTodoById(req.params.todoId);
     res.status(httpStatus.NO_CONTENT).send();
   } catch (error) {
+    if (error instanceof ApiError) {
+      const { statusCode, message } = error;
+      res.status(statusCode).send({ code: statusCode, message });
+    }
     res.status(httpStatus.INTERNAL_SERVER_ERROR).send({ message: error.message });
   }
 };

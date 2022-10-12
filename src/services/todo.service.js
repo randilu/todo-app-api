@@ -1,24 +1,27 @@
-const ToDo = require('../models/todo.model');
+const httpStatus = require('http-status');
+const Todo = require('../models/todo.model');
+const ApiError = require('../utils/ApiError');
 // const { todo } = require('../__mocks__');
 
-const getTodos = async () => ToDo.find({});
+const getTodos = async () => Todo.find({});
 
-const createTodo = async (todoBody) => ToDo.create(todoBody);
+const createTodo = async (todoBody) => Todo.create(todoBody);
 
-/* const queryTodos = async (filter, options) => mockTodos;
+// const queryTodos = async (filter, options) => mockTodos;
 
-const getTodoById = async (id) => Todo.findById(id);
+const getTodoById = async (id) => {
+  const todo = Todo.findById(id);
+  console.log(todo);
+  if (!todo) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Todo not found');
+  }
+  return todo;
+};
 
 const updateTodoById = async (todoId, updateBody) => {
   const todo = await getTodoById(todoId);
   if (!todo) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Todo not found');
-  }
-  if (updateBody.email && (await Todo.isEmailTaken(
-    updateBody.email,
-    todoId,
-  ))) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Email already taken');
   }
   Object.assign(todo, updateBody);
   await todo.save();
@@ -27,18 +30,17 @@ const updateTodoById = async (todoId, updateBody) => {
 
 const deleteTodoById = async (todoId) => {
   const todo = await getTodoById(todoId);
-  if (!todo) {
+  /* if (!todo) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Todo not found');
-  }
+  } */
   await todo.remove();
   return todo;
-}; */
+};
 
 module.exports = {
   createTodo,
-  //  deleteTodoById,
-  // getTodoById,
+  deleteTodoById,
+  getTodoById,
   getTodos,
-  // queryTodos,
-  // updateTodoById,
+  updateTodoById,
 };

@@ -1,4 +1,4 @@
-# ToDo App
+# Todo App
 
 ## Installation
 
