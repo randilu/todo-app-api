@@ -10,8 +10,12 @@ const createTodo = async (todoBody) => Todo.create(todoBody);
 // const queryTodos = async (filter, options) => mockTodos;
 
 const getTodoById = async (id) => {
-  const todo = Todo.findById(id);
-  console.log(todo);
+  let todo;
+  try {
+    todo = await Todo.findById(id);
+  } catch (error) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'malformatted id');
+  }
   if (!todo) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Todo not found');
   }
@@ -20,9 +24,6 @@ const getTodoById = async (id) => {
 
 const updateTodoById = async (todoId, updateBody) => {
   const todo = await getTodoById(todoId);
-  if (!todo) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'Todo not found');
-  }
   Object.assign(todo, updateBody);
   await todo.save();
   return todo;
@@ -30,9 +31,6 @@ const updateTodoById = async (todoId, updateBody) => {
 
 const deleteTodoById = async (todoId) => {
   const todo = await getTodoById(todoId);
-  /* if (!todo) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'Todo not found');
-  } */
   await todo.remove();
   return todo;
 };

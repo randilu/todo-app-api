@@ -28,6 +28,7 @@ const getTodo = async (req, res) => {
     if (error instanceof ApiError) {
       const { statusCode, message } = error;
       res.status(statusCode).send({ code: statusCode, message });
+      return;
     }
     res.status(httpStatus.INTERNAL_SERVER_ERROR).send({ message: error.message });
   }
@@ -41,6 +42,7 @@ const updateTodo = async (req, res) => {
     if (error instanceof ApiError) {
       const { statusCode, message } = error;
       res.status(statusCode).send({ code: statusCode, message });
+      return;
     }
     res.status(httpStatus.INTERNAL_SERVER_ERROR).send({ message: error.message });
   }
@@ -54,6 +56,7 @@ const deleteTodo = async (req, res) => {
     if (error instanceof ApiError) {
       const { statusCode, message } = error;
       res.status(statusCode).send({ code: statusCode, message });
+      return;
     }
     res.status(httpStatus.INTERNAL_SERVER_ERROR).send({ message: error.message });
   }
