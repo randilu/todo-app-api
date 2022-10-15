@@ -1,0 +1,263 @@
+{
+    "info": {
+        "name": "todoApp",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "hosted",
+            "item": [
+                {
+                    "name": "https://todo-app-api.fly.dev/v1/todos",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "https://todo-app-api.fly.dev/v1/todos",
+                            "protocol": "https",
+                            "host": [
+                                "todo-app-api",
+                                "fly",
+                                "dev"
+                            ],
+                            "path": [
+                                "v1",
+                                "todos"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "https://todo-app-api.fly.dev/v1/todos",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "https://todo-app-api.fly.dev/v1/todos",
+                            "protocol": "https",
+                            "host": [
+                                "todo-app-api",
+                                "fly",
+                                "dev"
+                            ],
+                            "path": [
+                                "v1",
+                                "todos"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": " {\n    \"title\":\"Serve the Cake\",\n    \"description\": \"Determine the size and quantity of cakes to make and how to cut them for weddings and parties.\"\n    \n  }"
+                        }
+                    }
+                },
+                {
+                    "name": "https://todo-app-api.fly.dev/v1/todos/:id",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "https://todo-app-api.fly.dev/v1/todos/63484fc450969925870cdcf5",
+                            "protocol": "https",
+                            "host": [
+                                "todo-app-api",
+                                "fly",
+                                "dev"
+                            ],
+                            "path": [
+                                "v1",
+                                "todos",
+                                "63484fc450969925870cdcf5"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "https://todo-app-api.fly.dev/v1/todos/:id",
+                    "request": {
+                        "method": "PATCH",
+                        "url": {
+                            "raw": "https://todo-app-api.fly.dev/v1/todos/63484fc450969925870cdcf5",
+                            "protocol": "https",
+                            "host": [
+                                "todo-app-api",
+                                "fly",
+                                "dev"
+                            ],
+                            "path": [
+                                "v1",
+                                "todos",
+                                "63484fc450969925870cdcf5"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n    \"status\": \"in-progress\"\n  }"
+                        }
+                    }
+                },
+                {
+                    "name": "https://todo-app-api.fly.dev/v1/todos/:id",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "https://todo-app-api.fly.dev/v1/todos/634a64a306bfcc58d2d2b0bd",
+                            "protocol": "https",
+                            "host": [
+                                "todo-app-api",
+                                "fly",
+                                "dev"
+                            ],
+                            "path": [
+                                "v1",
+                                "todos",
+                                "634a64a306bfcc58d2d2b0bd"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": " {\n    \"title\":\" Make the cake\",\n    \"description\": \"First you'll have to choose a recipe. You can keep it simple or you can choose a slightly showier recipe..\",\n    \"status\": \"completed\"\n  }"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "local",
+            "item": [
+                {
+                    "name": "http://localhost:5000/v1/todos",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:5000/v1/todos",
+                            "protocol": "http",
+                            "host": [
+                                "localhost:5000"
+                            ],
+                            "path": [
+                                "v1",
+                                "todos"
+                            ],
+                            "port": "5000"
+                        }
+                    }
+                },
+                {
+                    "name": "http://localhost:5000/v1/todos",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/v1/todos",
+                            "protocol": "http",
+                            "host": [
+                                "localhost:5000"
+                            ],
+                            "path": [
+                                "v1",
+                                "todos"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": " {\n    \"title\":\" Make the cake\",\n    \"description\": \"First you'll have to choose a recipe. You can keep it simple or you can choose a slightly showier recipe..\",\n    \"status\": \"completed\"\n  }"
+                        }
+                    }
+                },
+                {
+                    "name": "http://localhost:5000/v1/todos",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:5000/v1/todos/63484fc450969925870cdc1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost:5000"
+                            ],
+                            "path": [
+                                "v1",
+                                "todos",
+                                "63484fc450969925870cdc1"
+                            ],
+                            "port": "5000"
+                        }
+                    }
+                },
+                {
+                    "name": "http://localhost:5000/v1/todos/:id",
+                    "request": {
+                        "method": "PATCH",
+                        "url": {
+                            "raw": "http://localhost:5000/v1/todos/63484fc450969925870cdcf5",
+                            "protocol": "http",
+                            "host": [
+                                "localhost:5000"
+                            ],
+                            "path": [
+                                "v1",
+                                "todos",
+                                "63484fc450969925870cdcf5"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n    \"status\": \"in-progress\"\n  }"
+                        }
+                    }
+                },
+                {
+                    "name": "http://localhost:5000/v1/todos",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:5000/v1/todos/6345bcaddc05d9965c5adde",
+                            "protocol": "http",
+                            "host": [
+                                "localhost:5000"
+                            ],
+                            "path": [
+                                "v1",
+                                "todos",
+                                "6345bcaddc05d9965c5adde"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": " {\n    \"title\":\" Make the cake\",\n    \"description\": \"First you'll have to choose a recipe. You can keep it simple or you can choose a slightly showier recipe..\",\n    \"status\": \"completed\"\n  }"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
