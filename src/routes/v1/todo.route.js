@@ -1,17 +1,16 @@
 const express = require('express');
-const todoController = require('../../controllers/todo.controller');
+const { celebrate } = require('celebrate');
+const { todoController } = require('../../controllers');
+const { todoValidation } = require('../../validations');
 
 const router = express.Router();
 
-router
-  .route('/')
-  .post(todoController.createTodo)
-  .get(todoController.getTodos);
+router.route('/').post(celebrate(todoValidation.createTodoSchema), todoController.createTodo).get(todoController.getTodos);
 
 router
   .route('/:todoId')
-  .get(todoController.getTodo)
-  .patch(todoController.updateTodo)
-  .delete(todoController.deleteTodo);
+  .get(celebrate(todoValidation.getTodoSchema), todoController.getTodo)
+  .patch(celebrate(todoValidation.updateTodoSchema), todoController.updateTodo)
+  .delete(celebrate(todoValidation.deleteTodoSchema), todoController.deleteTodo);
 
 module.exports = router;
