@@ -8,11 +8,11 @@
             "name": "hosted",
             "item": [
                 {
-                    "name": "https://todo-app-api.fly.dev/v1/todos",
+                    "name": "https://todo-app-api.fly.dev/api/v3/todos",
                     "request": {
                         "method": "GET",
                         "url": {
-                            "raw": "https://todo-app-api.fly.dev/v1/todos",
+                            "raw": "https://todo-app-api.fly.dev/api/v3/todos",
                             "protocol": "https",
                             "host": [
                                 "todo-app-api",
@@ -27,11 +27,11 @@
                     }
                 },
                 {
-                    "name": "https://todo-app-api.fly.dev/v1/todos",
+                    "name": "https://todo-app-api.fly.dev/api/v3/todos",
                     "request": {
                         "method": "POST",
                         "url": {
-                            "raw": "https://todo-app-api.fly.dev/v1/todos",
+                            "raw": "https://todo-app-api.fly.dev/api/v3/todos",
                             "protocol": "https",
                             "host": [
                                 "todo-app-api",
@@ -55,11 +55,11 @@
                     }
                 },
                 {
-                    "name": "https://todo-app-api.fly.dev/v1/todos/:id",
+                    "name": "https://todo-app-api.fly.dev/api/v3/todos/:id",
                     "request": {
                         "method": "GET",
                         "url": {
-                            "raw": "https://todo-app-api.fly.dev/v1/todos/63484fc450969925870cdcf5",
+                            "raw": "https://todo-app-api.fly.dev/api/v3/todos/63484fc450969925870cdcf5",
                             "protocol": "https",
                             "host": [
                                 "todo-app-api",
@@ -75,11 +75,11 @@
                     }
                 },
                 {
-                    "name": "https://todo-app-api.fly.dev/v1/todos/:id",
+                    "name": "https://todo-app-api.fly.dev/api/v3/todos/:id",
                     "request": {
                         "method": "PATCH",
                         "url": {
-                            "raw": "https://todo-app-api.fly.dev/v1/todos/63484fc450969925870cdcf5",
+                            "raw": "https://todo-app-api.fly.dev/api/v3/todos/63484fc450969925870cdcf5",
                             "protocol": "https",
                             "host": [
                                 "todo-app-api",
@@ -104,11 +104,11 @@
                     }
                 },
                 {
-                    "name": "https://todo-app-api.fly.dev/v1/todos/:id",
+                    "name": "https://todo-app-api.fly.dev/api/v3/todos/:id",
                     "request": {
                         "method": "DELETE",
                         "url": {
-                            "raw": "https://todo-app-api.fly.dev/v1/todos/634a64a306bfcc58d2d2b0bd",
+                            "raw": "https://todo-app-api.fly.dev/api/v3/todos/634a64a306bfcc58d2d2b0bd",
                             "protocol": "https",
                             "host": [
                                 "todo-app-api",
@@ -138,11 +138,11 @@
             "name": "local",
             "item": [
                 {
-                    "name": "http://localhost:5000/v1/todos",
+                    "name": "http://localhost:5000/api/v3/todos",
                     "request": {
                         "method": "GET",
                         "url": {
-                            "raw": "http://localhost:5000/v1/todos",
+                            "raw": "http://localhost:5000/api/v3/todos",
                             "protocol": "http",
                             "host": [
                                 "localhost:5000"
@@ -156,11 +156,11 @@
                     }
                 },
                 {
-                    "name": "http://localhost:5000/v1/todos",
+                    "name": "http://localhost:5000/api/v3/todos",
                     "request": {
                         "method": "POST",
                         "url": {
-                            "raw": "http://localhost:5000/v1/todos",
+                            "raw": "http://localhost:5000/api/v3/todos",
                             "protocol": "http",
                             "host": [
                                 "localhost:5000"
@@ -183,11 +183,11 @@
                     }
                 },
                 {
-                    "name": "http://localhost:5000/v1/todos",
+                    "name": "http://localhost:5000/api/v3/todos",
                     "request": {
                         "method": "GET",
                         "url": {
-                            "raw": "http://localhost:5000/v1/todos/63484fc450969925870cdc1",
+                            "raw": "http://localhost:5000/api/v3/todos/63484fc450969925870cdc1",
                             "protocol": "http",
                             "host": [
                                 "localhost:5000"
@@ -202,11 +202,11 @@
                     }
                 },
                 {
-                    "name": "http://localhost:5000/v1/todos/:id",
+                    "name": "http://localhost:5000/api/v3/todos/:id",
                     "request": {
                         "method": "PATCH",
                         "url": {
-                            "raw": "http://localhost:5000/v1/todos/63484fc450969925870cdcf5",
+                            "raw": "http://localhost:5000/api/v3/todos/63484fc450969925870cdcf5",
                             "protocol": "http",
                             "host": [
                                 "localhost:5000"
@@ -230,11 +230,11 @@
                     }
                 },
                 {
-                    "name": "http://localhost:5000/v1/todos",
+                    "name": "http://localhost:5000/api/v3/todos",
                     "request": {
                         "method": "DELETE",
                         "url": {
-                            "raw": "http://localhost:5000/v1/todos/6345bcaddc05d9965c5adde",
+                            "raw": "http://localhost:5000/api/v3/todos/6345bcaddc05d9965c5adde",
                             "protocol": "http",
                             "host": [
                                 "localhost:5000"
