@@ -2,28 +2,43 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "REST API",
+    "title": "TODO API",
     "description": ""
   },
   "host": "localhost:5000",
   "basePath": "/v1/",
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["http"],
   "paths": {
     "/todos": {
       "get": {
         "description": "",
-        "parameters": [],
+        "parameters": [
+        ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Todo"
+              }
+            }
           }
         }
       },
       "post": {
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "todo item in body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Todo"
+            }
+          }
+        ],
         "responses": {}
       }
     },
@@ -40,7 +55,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+                "$ref": "#/definitions/Todo"
+            }
           }
         }
       },
@@ -70,6 +88,27 @@
           "200": {
             "description": "OK"
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Todo": {
+      "type": "object",
+      "required": ["title", "status"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "example": "Todo title"
+        },
+        "status": {
+          "type": "string",
+          "description": "Todo status",
+          "enum": ["new", "progressing", "done"]
+        },
+        "description": {
+          "type": "string",
+          "example": "Todo description"
         }
       }
     }
