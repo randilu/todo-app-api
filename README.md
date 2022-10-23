@@ -1,5 +1,10 @@
 # Todo App
 
+## Prerequisites:
+
+- Install Nodejs and the Node Package Manager (npm)
+- Appropriate IDE, Visual Studio Code preferred
+
 ## Installation
 
 Clone the repo
