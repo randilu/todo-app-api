@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "TODO API",
-    "description": ""
+    "description": "Todo api to demo CRUD operations"
   },
   "host": "localhost:5000",
   "basePath": "/v1/",
@@ -20,7 +20,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Todo"
+                "$ref": "#/definitions/TodoResponse"
               }
             }
           }
@@ -35,7 +35,7 @@
             "description": "todo item in body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Todo"
+              "$ref": "#/definitions/TodoRequest"
             }
           }
         ],
@@ -57,7 +57,7 @@
           "200": {
             "description": "OK",
             "schema": {
-                "$ref": "#/definitions/Todo"
+                "$ref": "#/definitions/TodoResponse"
             }
           }
         }
@@ -93,7 +93,7 @@
     }
   },
   "definitions": {
-    "Todo": {
+    "TodoRequest": {
       "type": "object",
       "required": ["title", "status"],
       "properties": {
@@ -109,6 +109,37 @@
         "description": {
           "type": "string",
           "example": "Todo description"
+        }
+      }
+    },
+    "TodoResponse": {
+      "type": "object",
+      "required": ["title", "status"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "example": "Todo title"
+        },
+        "status": {
+          "type": "string",
+          "description": "Todo status",
+          "enum": ["new", "progressing", "done"]
+        },
+        "description": {
+          "type": "string",
+          "example": "Todo description"
+        },
+        "id": {
+          "type": "string",
+          "example": "Unique Id"
+        },
+        "createdAt": {
+          "type": "string",
+          "example": "Created At"
+        },
+        "updatedAt": {
+          "type": "string",
+          "example": "Updated At"
         }
       }
     }
