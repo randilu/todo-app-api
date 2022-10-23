@@ -1,0 +1,17 @@
+useDotenv: true
+service: todo-application
+configValidationMode: error
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: us-east-1
+
+functions:
+  app:
+    handler: serverless.handler
+    environment:
+      MONGODB_URL: ${env:MONGODB_URL}
+    events:
+      - http: ANY /
+      - http: 'ANY /{proxy+}'

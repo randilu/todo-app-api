@@ -4,14 +4,13 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
-const mongoose = require('mongoose');
+const { connect } = require('./utils/mongoose');
 const app = require('./app');
 
-const dbUrl = process.env.MONGODB_URL;
 const port = process.env.PORT || 5000;
 
 let server;
-mongoose.connect(dbUrl).then(() => {
+connect().then(() => {
   console.log('Connected to MongoDB');
   server = app.listen(port, () => {
     console.log(`Listening to port ${port}`);
