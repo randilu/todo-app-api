@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// v1 api routes
+// v3 api routes
 app.use('/api/v3', routes);
 app.use(errors());
 
