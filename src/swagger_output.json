@@ -5,12 +5,20 @@
     "title": "TODO API",
     "description": "Todo api to demo CRUD operations"
   },
+  "securityDefinitions":{
+    "Bearer":{
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
   "host": "localhost:5000",
   "basePath": "/v1/",
   "schemes": ["http"],
   "paths": {
     "/todos": {
       "get": {
+        "security": [{ "Bearer": [] }],
         "description": "",
         "parameters": [
         ],
@@ -23,10 +31,14 @@
                 "$ref": "#/definitions/TodoResponse"
               }
             }
+          },
+          "403": {
+            "description": "Unauthorized"
           }
         }
       },
       "post": {
+        "security": [{ "Bearer": [] }],
         "description": "",
         "parameters": [
           {
@@ -39,11 +51,19 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Unauthorized"
+          }
+        }
       }
     },
     "/todos/{todoId}": {
       "get": {
+        "security": [{ "Bearer": [] }],
         "description": "",
         "parameters": [
           {
@@ -59,22 +79,14 @@
             "schema": {
                 "$ref": "#/definitions/TodoResponse"
             }
+          },
+          "403": {
+            "description": "Unauthorized"
           }
         }
       },
       "delete": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "todoId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {}
-      },
-      "patch": {
+        "security": [{ "Bearer": [] }],
         "description": "",
         "parameters": [
           {
@@ -87,6 +99,29 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "403": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "patch": {
+        "security": [{ "Bearer": [] }],
+        "description": "",
+        "parameters": [
+          {
+            "name": "todoId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Unauthorized"
           }
         }
       }
