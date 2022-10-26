@@ -8,14 +8,14 @@ const mockTodos = [
   {
     id: '2',
     title: 'Bake the cake',
-    description: 'Put the cake in the oven and wait for it to bake',
+    description: "Divide the batter evenly between the baking pans. Bake your cake according to your recipe's directions.",
     status: 'completed',
   },
   {
     id: '3',
-    title: 'Eat the cake',
-    description: 'Have fun eating the cake',
-    status: 'completed',
+    title: 'Serve the cake',
+    description: "Most cakes should be cut with a chef's knife. Use a long serrated knife for cakes with fresh fruit filling",
+    status: 'in-progress',
   },
 ];
 
