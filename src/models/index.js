@@ -1,1 +1,1 @@
-module.exports.todo = require('./todo.model');
+module.exports.todoModel = require('./todo.model');

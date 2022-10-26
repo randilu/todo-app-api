@@ -1,3 +1,4 @@
+.DS_Store
 # Dependencies
 node_modules
 
@@ -10,5 +11,3 @@ yarn-error.log
 
 # Code coverage
 coverage
-
-.DS_Store

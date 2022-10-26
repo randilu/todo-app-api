@@ -1,18 +1,18 @@
 const httpStatus = require('http-status');
-const Todo = require('../models/todo.model');
+const { todoModel } = require('../models');
 const ApiError = require('../utils/ApiError');
 // const { todo } = require('../__mocks__');
 
-const getTodos = async () => Todo.find({});
+const getTodos = async () => todoModel.Todo.find({});
 
-const createTodo = async (todoBody) => Todo.create(todoBody);
+const createTodo = async (todoBody) => todoModel.Todo.create(todoBody);
 
 // const queryTodos = async (filter, options) => mockTodos;
 
 const getTodoById = async (id) => {
   let todo;
   try {
-    todo = await Todo.findById(id);
+    todo = await todoModel.Todo.findById(id);
   } catch (error) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'malformatted id');
   }

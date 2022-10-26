@@ -1,8 +1,9 @@
-/* eslint-disable no-console */
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  require('dotenv').config();
-}
+// //* eslint-disable no-console */
+// if (process.env.NODE_ENV !== 'production') {
+//   // eslint-disable-next-line global-require
+//   require('dotenv').config();
+// }
+require('dotenv').config();
 
 const mongoose = require('mongoose');
 const app = require('./app');
@@ -10,15 +11,14 @@ const app = require('./app');
 const dbUrl = process.env.MONGODB_URL;
 const port = process.env.PORT || 5000;
 
-let server;
 mongoose.connect(dbUrl).then(() => {
   console.log('Connected to MongoDB');
-  server = app.listen(port, () => {
+  app.listen(port, () => {
     console.log(`Listening to port ${port}`);
   });
-});
+}).catch((err) => { console.log(err); });
 
-const exitHandler = () => {
+/* const exitHandler = () => {
   if (server) {
     server.close(() => {
       console.log('Server closed');
@@ -42,4 +42,4 @@ process.on('SIGTERM', () => {
   if (server) {
     server.close();
   }
-});
+}); */
