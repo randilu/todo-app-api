@@ -1,5 +1,6 @@
 # Todo App
-
+## Description
+This just a demo project to explain how we could bootstrap a project with express.
 ## Prerequisites:
 
 - Install Nodejs and the Node Package Manager(npm) or Yarn Package Manager
