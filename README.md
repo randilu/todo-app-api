@@ -2,7 +2,7 @@
 
 ## Prerequisites:
 
-- Install Nodejs and the Node Package Manager (npm)
+- Install Nodejs and the Node Package Manager(npm) or Yarn Package Manager
 - Appropriate IDE, Visual Studio Code preferred
 
 ## Installation
